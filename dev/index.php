@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include 'header/navbar.php'; ?>
+    <?php include 'components/navbar.php'; ?>
     <main>
         <h1>Bienvenue à [Nom de la Salle de Sport]</h1>
         <p>Votre santé et votre bien-être sont notre priorité.</p>
     </main>
-    <?php include 'footer.php'; ?>
+    <?php include 'components/footer.php'; ?>
 </body>
 </html>
