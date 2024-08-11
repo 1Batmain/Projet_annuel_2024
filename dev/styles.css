@@ -1,0 +1,74 @@
+:root {
+
+/* Variables Générales */
+  --noir: #272727;
+  --vert: #57DC54;
+  --gris: #383838;
+  --gris-clair: #686868;
+  --blanc: #FFFFFF;
+
+}
+span {
+
+  color: var(--vert);
+}
+.bg-vert {
+  background-color: var(--vert);
+}
+.bg-gris {
+  background-color: var(--gris);
+}
+.bg-gris-clair {
+  background-color: var(--gris-clair);
+}
+.bg-blanc {
+  background-color: var(--blanc);
+}
+.bg-noir {
+  background-color: var(--noir);
+}
+
+/* Style du tiroir latéral */
+.menuLateral {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Masqué par défaut */
+  background-color: var(--noir);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 1000; /* Pour qu'il soit au-dessus du contenu */
+}
+
+.menuLateral a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.menuLateral a:hover {
+  background-color: var(--gris-clair);
+}
+
+/* masqueFond pour le reste de la page quand on ouvre le menu latéral (petit écran)*/
+.masqueFond {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0); 
+  z-index: 900;
+  transition: background-color 0.5s ease;
+  opacity : 0;
+}
+.masqueFond.visible{
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
