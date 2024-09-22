@@ -12,12 +12,13 @@
     <?php
         session_start();  // N'oublie pas de démarrer la session
 
-        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+   /*  resoudre se probleme
+     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
             // Rediriger vers la page d'accueil si déjà connecté
             header("Location: ../index.php");
             exit();
         }
-
+*/
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             require_once('../access/database.php');
 

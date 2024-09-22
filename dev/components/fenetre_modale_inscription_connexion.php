@@ -10,15 +10,15 @@
             </div>
             <div class="modal-body">
                 <!-- Formulaire de connexion -->
-                <form action="result_login.php" method="post">
+                <form action="../dev/access/result_login.php" method="post">
                     <!-- Vos champs de formulaire ici -->
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="Entrez votre email">
                     </div>
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe">
+                        <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe">
                     </div>
                     <div class='text-center mt-3'>
                         <button type="submit" class="btn btn-primary">Se connecter</button>
@@ -75,10 +75,6 @@
                         <option value="user">User</option>
                     </select>
                     </div>
-                <br>
-                <!-- reCAPTCHA -->
-                <div class="g-recaptcha" data-sitekey="6Le-vksqAAAAAO0QehYDa90hBV7fUDSTkQvd8eDo"></div>
-                <br>
                     <div class='text-center mt-3'>
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
                     </div>

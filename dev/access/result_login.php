@@ -13,12 +13,12 @@
         <?php
         session_start();  // Démarrer la session pour stocker des informations après connexion
 
-        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+       /* if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             // Rediriger vers la page d'accueil si déjà connecté
             header("Location: ../index.php");  // Chemin relatif corrigé
             exit();
         }
-
+*/
         require_once('../access/database.php');  // Inclure la connexion à la base de données
 
         // Vérification que le formulaire a bien été soumis
@@ -63,7 +63,7 @@
         ?>
     </main>
 
-    <?php require_once('../components/footer.php'); ?>  <!-- Chemin relatif corrigé -->
+  
 
 </body>
 </html>
