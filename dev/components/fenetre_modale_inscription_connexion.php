@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <!-- Formulaire de connexion -->
-                <form action='access/login.php'>
+                <form action="result_login.php" method="post">
                     <!-- Vos champs de formulaire ici -->
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -41,20 +41,44 @@
             </div>
             <div class="modal-body">
                 <!-- Formulaire d'inscription -->
-                <form action='access/register.php'>
+                <form action="../dev/access/result.php" method="post">
                     <!-- Vos champs de formulaire ici -->
                     <div class="form-group">
-                        <label for="username">Nom d'utilisateur</label>
-                        <input type="text" class="form-control" id="username" placeholder="Entrez votre nom d'utilisateur">
+                    <label for="nom">Nom</label>
+                    <input type="text"  class="form-control" id="nom" name="nom" required placeholder="Entrez votre Nom">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" required placeholder="Entrez votre Prénom">
+                    </div>
+                    <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" placeholder="Entrez votre age">
+                    </div>
+                    <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="Entrez votre email">
                     </div>
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
-                        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe">
+                        <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe">
                     </div>
+                    <div class="form-group">
+                    <label for="confirmation_de_mot_de_passe">Confirmation de mot de passe</label>
+                    <input type="password" class="form-control" id="confirmation_de_mot_de_passe" name="confirmation_de_mot_de_passe" required placeholder="Confirmez le mots de passe">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" class="form-control" name="role">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                    </div>
+                <br>
+                <!-- reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="6Le-vksqAAAAAO0QehYDa90hBV7fUDSTkQvd8eDo"></div>
+                <br>
                     <div class='text-center mt-3'>
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
                     </div>
