@@ -12,7 +12,7 @@
             <ul class="navbar-nav ">
                 <li class="nav-item"><a class="nav-link" href="./index.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/concept.php">Concept</a></li>
-                <li class="nav-item"><a class="nav-link" href="./pages/abonnements.php">Abonnements</a></li>
+                <li class="nav-item"><a class="nav-link" href="./pages/subs.php">Abonnements</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/clubs.php">Les clubs</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/forum.php">Forum</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/boutique.php">Boutique</a></li>
@@ -27,12 +27,12 @@
             <a href="javascript:void(0)" class='closebtn' onclick="closeNav()">&times;</a>
             <a class="nav-link" href="./index.php">Accueil <span class="sr-only">(actuel)</span></a>
             <a class="nav-link" href="./pages/concept.php">Concept</a>
-            <a class="nav-link" href="./pages/abonnements.php">Abonnements</a>
+            <a class="nav-link" href="./pages/subs.php">Abonnements</a>
             <a class="nav-link" href="./pages/clubs.php">Les clubs</a>
             <a class="nav-link" href="./pages/forum.php">Forum</a>
             <a class="nav-link" href="./pages/boutique.php">Boutique</a>
-            <a class="nav-link" href="./access/inscription.php">Inscription</a>
-            <a class="nav-link" href="./access/connexion.php">Connexion</a>
+            <a class="nav-link" href="../access/register.php">Inscription</a>
+            <a class="nav-link" href="../access/login.php">Connexion</a>
         </div>
         <div id="masqueFond" class="masqueFond"></div>
     </nav>

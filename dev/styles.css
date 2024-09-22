@@ -1,15 +1,12 @@
 :root {
-
-/* Variables Générales */
+  /* Variables Générales */
   --noir: #272727;
-  --vert: #57DC54;
+  --vert: #57dc54;
   --gris: #383838;
   --gris-clair: #686868;
-  --blanc: #FFFFFF;
-
+  --blanc: #ffffff;
 }
 span {
-
   color: var(--vert);
 }
 .bg-vert {
@@ -62,13 +59,83 @@ span {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0);
   z-index: 900;
   transition: background-color 0.5s ease;
-  opacity : 0;
+  opacity: 0;
 }
-.masqueFond.visible{
+.masqueFond.visible {
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 1;
 }
+.card-title {
+  font-weight: bold;
+}
 
+.card-text {
+  color: #ffa500;
+}
+
+.underline {
+  width: 50px;
+  height: 2px;
+  background-color: #ffa500;
+  margin: 10px 0;
+}
+
+.section-title {
+  margin-bottom: 40px;
+}
+
+.actualites-section {
+  padding: 60px 0;
+}
+
+.btn-link {
+  color: #ffa500;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+  color: #ff9800;
+}
+.card-img-top {
+  height: 250px; /* Hauteur uniforme pour toutes les images */
+  object-fit: cover; /* Assure que l'image couvre tout l'espace sans laisser de blanc */
+  width: 100%; /* Assure que l'image prend toute la largeur */
+  border-radius: 0; /* Retirer les coins arrondis si nécessaire */
+}
+/* Supprime l'espace entre les colonnes */
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Colle les images entre elles */
+.col-md-6 {
+  padding: 0;
+}
+
+/* Bordure autour des images */
+.img-bordered {
+  border: 2px solid black; /* Couleur de la bordure noire */
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pour couvrir tout l'espace sans déformer */
+}
+/* Titre superposé sur l'image */
+.position-relative {
+  position: relative;
+}
+
+.image-title {
+  position: absolute;
+  top: 20px; /* Ajuste la position verticale */
+  left: 20px; /* Ajuste la position horizontale */
+  color: white; /* Couleur du texte */
+  background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+}

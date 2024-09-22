@@ -26,12 +26,36 @@ nav ul li a:hover {
   background-color: #575757;
 }
 
+/* Footer styles */
 footer {
   background-color: #333;
   color: white;
   text-align: center;
   padding: 10px 0;
-  position: fixed;
   width: 100%;
+  position: fixed;
   bottom: 0;
+  left: 0; /* Ensure the footer sticks to the bottom on the left */
+}
+
+/* Footer heading enhancements */
+footer h5 {
+  color: #b4ff00; /* Green color for headings */
+  border-left: 2px solid #b4ff00; /* Green vertical line */
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* Footer links hover effect */
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Styling inline footer links */
+.list-inline-item a {
+  color: #ccc; /* Default color */
+}
+
+.list-inline-item a:hover {
+  color: white; /* Change color on hover */
 }
