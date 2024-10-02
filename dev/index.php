@@ -14,7 +14,7 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 -->
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../dev/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 
 </head>
 
@@ -25,7 +25,7 @@ session_start();
             <span>🔥 Offre spéciale : Les 4 premières semaines à 19€</span>
         </div>
         <div class="me-3">
-            <a href="../dev/access/register.php" class="text-white text-decoration-none me-3">S'INSCRIRE</a>
+            <a href="./access/register.php" class="text-white text-decoration-none me-3">S'INSCRIRE</a>
             <a href="#" class="text-white text-decoration-none">✕</a>
         </div>
     </div>
@@ -91,7 +91,7 @@ session_start();
         <!-- Première carte -->
         <div class="col-md-4">
             <div class="card">
-                <img src="../dev/images/tout-savoir-sur-le-cheat-meal.jpg" class="card-img-top" alt="Article 1">
+                <img src="./images/tout-savoir-sur-le-cheat-meal.jpg" class="card-img-top" alt="Article 1">
                 <div class="card-body">
                     <h5 class="card-title">LE RECALIBRAGE MÉTABOLIQUE POUR RELANCER UNE PERTE DE POIDS ?</h5>
                     <p class="card-text">Par Naomi Garciau</p>
@@ -103,7 +103,7 @@ session_start();
         <!-- Deuxième carte -->
         <div class="col-md-4">
             <div class="card">
-                <img src="../dev/images/imageactu2.jpg" class="card-img-top" alt="Article 2">
+                <img src="./images/imageactu2.jpg" class="card-img-top" alt="Article 2">
                 <div class="card-body">
                     <h5 class="card-title">OBTENIR UN 6 PACK VISIBLE : LA MÉTHODE APPROUVÉE PAR NASSIM SAHILI</h5>
                     <p class="card-text">Par Nassim Sahili</p>
@@ -115,7 +115,7 @@ session_start();
         <!-- Troisième carte -->
         <div class="col-md-4">
             <div class="card">
-                <img src="../dev/images/Vignette_Salade-couscous-1-550x550.jpg" class="card-img-top" alt="Article 3">
+                <img src="./images/Vignette_Salade-couscous-1-550x550.jpg" class="card-img-top" alt="Article 3">
                 <div class="card-body">
                     <h5 class="card-title">SALADE DE SEMOULE AUX LÉGUMES GRILLÉS</h5>
                     <p class="card-text">Par Naomi Garciau</p>
@@ -143,19 +143,19 @@ session_start();
     <div class="row no-gutters">
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Concept Vivafit</h3>
-            <img src="../dev/images/Sreen-lame-1.png" alt="Concept et App" class="img-fluid img-bordered">
+            <img src="./images/Sreen-lame-1.png" alt="Concept et App" class="img-fluid img-bordered">
         </div>
         <div class="col-md-6 position-relative">
             <h3 class="image-title">APP Vivafit</h3>
-            <img src="../dev/images/tout-savoir-sur-le-cheat-meal.jpg" alt="Homepark" class="img-fluid img-bordered">
+            <img src="./images/tout-savoir-sur-le-cheat-meal.jpg" alt="Homepark" class="img-fluid img-bordered">
         </div>
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Vivafit ACTU'</h3>
-            <img src="../dev/images/Copie-de-041224_FitnessPark_Saint_Brice_Sous_Foret-06-2.jpg" alt="Gym" class="img-fluid img-bordered">
+            <img src="./images/Copie-de-041224_FitnessPark_Saint_Brice_Sous_Foret-06-2.jpg" alt="Gym" class="img-fluid img-bordered">
         </div>
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Homepark</h3>
-            <img src="../dev/images/HP_Home_480x590_2.jpg" alt="Homepark" class="img-fluid img-bordered">
+            <img src="./images/HP_Home_480x590_2.jpg" alt="Homepark" class="img-fluid img-bordered">
         </div>
     </div>
 </div>
