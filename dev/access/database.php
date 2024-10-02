@@ -1,5 +1,4 @@
 <?php
-
 /* Informations de connexion */
 $host = "localhost";
 $dbname = "vitafit";

@@ -44,7 +44,7 @@
                 <!-- Si connecté -->
                 <button type="button" class="btn btn-outline-success ml-auto mx-2">Mon Compte</button>
                 <button type="button" class="btn btn-outline-success mx-2">Mon Panier</button>
-                <form action="../dev/access/logout.php" method="post" style="display: inline;">
+                <form action="../access/logout.php" method="post" style="display: inline;">
                     <button type="submit" class="btn btn-outline-danger mx-2">Se déconnecter</button>
                 </form>
             <?php else : ?>

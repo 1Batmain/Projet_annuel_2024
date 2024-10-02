@@ -1,5 +1,20 @@
 <?php
 session_start();
+require_once('../access/log_util.php');
+
+// Assurez-vous que l'utilisateur est connecté et que $user_id est défini
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
+// Obtenir le nom de la page actuelle
+$current_page = basename($_SERVER['PHP_SELF']);
+
+// Appel de la fonction ajouterLog pour ajouter un log de visite
+if ($user_id) {
+    ajouterLog($user_id, 'Visite de la page', $current_page);
+} else {
+    // Loguer les visites sans user_id si nécessaire
+    ajouterLog(null, 'Visite de la page sans connexion', $current_page);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,7 +23,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abonnements</title>
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../dev/styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
              <!-- Top Notification Bar -->
@@ -27,7 +42,7 @@ session_start();
     <?php include '../components/footer.php'; ?>
 
 
-<script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-<script src="script.js"></script>
+<script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

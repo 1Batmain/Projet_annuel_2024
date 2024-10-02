@@ -10,16 +10,10 @@
 <body>
 <main>
     <?php
-        session_start();  // N'oublie pas de démarrer la session
-        /*
-     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
-            // Rediriger vers la page d'accueil si déjà connecté
-            header("Location: ../index.php");
-            exit();
-        }
-*/
+        session_start();  // Démarre la session
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            require_once('../access/database.php');
+            require_once('database.php');
 
             // Récupérer les valeurs du formulaire
             $nom = $_POST['nom'];
@@ -70,7 +64,16 @@
                     ':role' => $role
                 ]);
 
-                // Si l'inscription réussit, rediriger vers la page d'accueil
+                // Récupérer l'ID de l'utilisateur
+                $user_id = $pdo->lastInsertId();
+
+                // Initialiser la session de l'utilisateur
+                $_SESSION['logged_in'] = true;
+                $_SESSION['email'] = $email;
+                $_SESSION['user_id'] = $user_id;  // Assurez-vous d'utiliser le bon champ d'identifiant
+                $_SESSION['role'] = $role;
+
+                // Rediriger vers la page d'accueil
                 header("Location: ../index.php");
                 exit();
                 

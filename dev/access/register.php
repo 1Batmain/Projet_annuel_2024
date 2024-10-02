@@ -45,7 +45,7 @@
             <input type="password" id="confirmation_de_mot_de_passe" name="confirmation_de_mot_de_passe" required>
         </div>
         <br>
-
+        
         <div class="form_input">
             <label for="role">Rôle </label>
             <select id="role" name="role">
