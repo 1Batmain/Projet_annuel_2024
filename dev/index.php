@@ -187,3 +187,5 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
     <script src="script.js"></script>
     </body>
 </html>
+
+// tets 
