@@ -1,20 +1,7 @@
-<?php
-session_start();
-require_once('../access/log_util.php');
-
-// Assurez-vous que l'utilisateur est connecté et que $user_id est défini
-$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
-
-// Obtenir le nom de la page actuelle
-$current_page = basename($_SERVER['PHP_SELF']);
-
-// Appel de la fonction ajouterLog pour ajouter un log de visite
-if ($user_id) {
-    ajouterLog($user_id, 'Visite de la page', $current_page);
-} else {
-    // Loguer les visites sans user_id si nécessaire
-    ajouterLog(null, 'Visite de la page sans connexion', $current_page);
-}
+<?php 
+session_start(); 
+require_once('../access/log_util.php'); 
+ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SESSION['user_id']) ? 'Visite de la page' : 'Visite de la page sans connexion', basename($_SERVER['PHP_SELF'])); 
 ?>
 <!DOCTYPE html>
 <html lang="fr">

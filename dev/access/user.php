@@ -22,7 +22,7 @@
         <?php
         /* Ici, j'importe le fichier database.php afin que ma base de données soit accessible au sein de ce fichier */
         /* Documentation : https://www.php.net/manual/en/function.require-once.php */
-        require_once('../access/database.php');
+        require_once('access/database.php');
 
         $id = $_GET['id'];
         $userRole = $_SESSION['role'];

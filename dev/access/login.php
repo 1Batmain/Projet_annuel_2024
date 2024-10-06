@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+require_once('access/log_util.php'); 
+ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SESSION['user_id']) ? 'Visite de la page' : 'Visite de la page sans connexion', basename($_SERVER['PHP_SELF'])); 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,9 +15,7 @@
     <!-- Ceci nous permet d'ajouter un favicon -->
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 </head>
-
 <body>
-
 <main>
         <h1>Connexion utilisateur</h1>
 
@@ -34,7 +37,5 @@
         </form>
     </main>
     <?php require_once ('components/footer.php') ?>
-
 </body>
-
 </html>
