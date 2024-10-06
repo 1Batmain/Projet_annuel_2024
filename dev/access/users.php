@@ -21,7 +21,7 @@
             <?php
             /* Ici, j'importe le fichier database.php afin que ma base de données soit accessible au sein de ce fichier */
             /* Documentation : https://www.php.net/manual/en/function.require-once.php */
-            require_once('../access/database.php');
+            require_once('database.php');
 
             /* En vérifiant la variable $_SESSION cela me permet de valider que l'utilisateur est connecté */
             if (isset($_SESSION["email"]) && !empty($_SESSION["email"])) {
@@ -29,7 +29,7 @@
                 echo "<p> Bienvenue, " . $_SESSION["email"] . "! </p>";
             } else {
                 /* Si l'utilisateur n'est pas connecté, je le redirige vers la page de login */
-                header("Location: dev/access/login.php");
+                header("Location: login.php");
             }
 
             /* On met en place une requête SQL pour récupérer les utilisateurs*/

@@ -1,4 +1,7 @@
 <!-- Modal Connexion -->
+ <head>
+<link rel="stylesheet" href="/dev/styles.css">
+ </head>
 <div class="modal fade" id="modalConnexion" tabindex="-1" role="dialog" aria-labelledby="modalConnexionLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -28,7 +31,6 @@
         </div>
     </div>
 </div>
-
 <!-- Modal Inscription -->
 <div class="modal fade" id="modalInscription" tabindex="-1" role="dialog" aria-labelledby="modalInscriptionLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -59,14 +61,30 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email" required placeholder="Entrez votre email">
                     </div>
-                    <div class="form-group">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe">
+                    <div class="form-group password-container">
+                    <label for="mot_de_passe">Mot de passe</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control passvue" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe">
+                        <div class="input-group-append">
+                            <span class="vue password-icon">
+                                <i class="feather-eye eye" data-feather="eye"></i>
+                                <i class="feather-eye-off eye-off" data-feather="eye-off" style="display: none;"></i>
+                            </span>
+                        </div>
                     </div>
-                    <div class="form-group">
+                </div>
+                <div class="form-group password-container">
                     <label for="confirmation_de_mot_de_passe">Confirmation de mot de passe</label>
-                    <input type="password" class="form-control" id="confirmation_de_mot_de_passe" name="confirmation_de_mot_de_passe" required placeholder="Confirmez le mots de passe">
+                    <div class="input-group">
+                        <input type="password" class="form-control passvue" id="confirmation_de_mot_de_passe" name="confirmation_de_mot_de_passe" required placeholder="Confirmez le mot de passe">
+                        <div class="input-group-append">
+                            <span class="vue password-icon">
+                                <i class="feather-eye eye" data-feather="eye"></i>
+                                <i class="feather-eye-off eye-off" data-feather="eye-off" style="display: none;"></i>
+                            </span>
+                        </div>
                     </div>
+                </div>
                     <br>
                     <div class="form-group">
                     <label for="role">Role</label>
@@ -83,4 +101,5 @@
         </div>
     </div>
 </div>
-
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="/dev/js/eye.js"></script>

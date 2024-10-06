@@ -3,7 +3,7 @@
 $host = "localhost";
 $dbname = "vitafit";
 $username = "root";
-$password = ""; // Assurez-vous que le mot de passe est correct
+$password = "";
 
 /* Création d'une instance PDO */
 try {
