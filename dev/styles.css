@@ -191,6 +191,7 @@ label .password-icon .feather-eye-off {
   white-space: nowrap;
   border-radius: var(--bs-border-radius);
 }
+<<<<<<< HEAD
 
 
 
@@ -217,3 +218,5 @@ body.light-theme {
   background-color: #28a745 !important;
   color: #d3d3d3;
 }
+=======
+>>>>>>> 54192c39d93588d0e72e801bbb899972967c8acc
