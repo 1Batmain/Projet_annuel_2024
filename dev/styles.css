@@ -1,4 +1,4 @@
-}:root {
+:root {
   /* Variables Générales */
   --noir: #272727;
   --vert: #57dc54;
@@ -6,28 +6,33 @@
   --gris-clair: #686868;
   --blanc: #ffffff;
   --vertnav: #198755;
-
 }
+
 span {
   color: var(--vert);
 }
+
 .bg-vert {
   background-color: var(--vert);
 }
+
 .bg-gris {
   background-color: var(--gris);
 }
+
 .bg-gris-clair {
   background-color: var(--gris-clair);
 }
+
 .bg-blanc {
   background-color: var(--blanc);
 }
+
 .bg-noir {
   background-color: var(--noir);
 }
 
-/* Vue mots de mots de passe */
+/* Vue mots de passe */
 label {
   position: relative;
 }
@@ -40,11 +45,13 @@ label input {
   width: 350px;
   border-radius: 5px;
   border: 2px solid #7a7a7a;
-  transition: all 0.2s;
+  transition: border-color 0.2s;
 }
+
 label input:focus {
   border-color: #ff4754;
 }
+
 label .password-icon {
   display: flex;
   align-items: center;
@@ -54,8 +61,9 @@ label .password-icon {
   transform: translateY(-50%);
   width: 20px;
   color: #f9f9f9;
-  transition: all 0.2s;
+  transition: color 0.2s;
 }
+
 label .password-icon:hover {
   cursor: pointer;
   color: #ff4754;
@@ -64,6 +72,7 @@ label .password-icon:hover {
 label .password-icon .feather-eye-off {
   display: none;
 }
+
 /* Style du tiroir latéral */
 .menuLateral {
   height: 100%;
@@ -75,7 +84,7 @@ label .password-icon .feather-eye-off {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-  z-index: 1000; /* Pour qu'il soit au-dessus du contenu */
+  z-index: 1000; /* Au-dessus du contenu */
 }
 
 .menuLateral a {
@@ -84,14 +93,14 @@ label .password-icon .feather-eye-off {
   font-size: 1.2rem;
   color: #ffffff;
   display: block;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .menuLateral a:hover {
   background-color: var(--gris-clair);
 }
 
-/* masqueFond pour le reste de la page quand on ouvre le menu latéral (petit écran)*/
+/* masqueFond pour le reste de la page */
 .masqueFond {
   height: 100%;
   width: 0;
@@ -103,10 +112,13 @@ label .password-icon .feather-eye-off {
   transition: background-color 0.5s ease;
   opacity: 0;
 }
+
 .masqueFond.visible {
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 1;
 }
+
+/* Titres et Cartes */
 .card-title {
   font-weight: bold;
 }
@@ -138,47 +150,48 @@ label .password-icon .feather-eye-off {
   text-decoration: underline;
   color: #ff9800;
 }
+
 .card-img-top {
-  height: 250px; /* Hauteur uniforme pour toutes les images */
-  object-fit: cover; /* Assure que l'image couvre tout l'espace sans laisser de blanc */
-  width: 100%; /* Assure que l'image prend toute la largeur */
-  border-radius: 0; /* Retirer les coins arrondis si nécessaire */
+  height: 250px; /* Hauteur uniforme */
+  object-fit: cover;
+  width: 100%;
 }
-/* Supprime l'espace entre les colonnes */
+
+/* Enlève l'espace entre colonnes */
 .row.no-gutters {
   margin-right: 0;
   margin-left: 0;
 }
 
-/* Colle les images entre elles */
 .col-md-6 {
   padding: 0;
 }
 
-/* Bordure autour des images */
 .img-bordered {
-  border: 2px solid black; /* Couleur de la bordure noire */
+  border: 2px solid black;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Pour couvrir tout l'espace sans déformer */
+  object-fit: cover;
 }
-/* Titre superposé sur l'image */
+
+/* Titre superposé */
 .position-relative {
   position: relative;
 }
 
 .image-title {
   position: absolute;
-  top: 20px; /* Ajuste la position verticale */
-  left: 20px; /* Ajuste la position horizontale */
-  color: white; /* Couleur du texte */
-  background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+  top: 20px;
+  left: 20px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 5px;
   z-index: 10;
 }
 
+/* Boutons et Vue */
 .vue {
   display: flex;
   align-items: center;
@@ -186,41 +199,32 @@ label .password-icon .feather-eye-off {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--bs-body-color);
   text-align: center;
   white-space: nowrap;
   border-radius: var(--bs-border-radius);
 }
 
-
-
-/* mode sombre */
-body{
-  background-color: #383838;
-  color: #ffffff;
+/* Mode sombre */
+body {
+  background-color: var(--gris);
+  color: var(--blanc);
 }
 
-/* mode clair */
-body.light-theme{
-  background-color: #ffffff;
-  color: #000000;
+/* Mode clair */
+body.light-theme {
   background-color: #eff3ee;
   color: #000000;
-  transition: 0.9s;
-
+  transition: background-color 0.9s, color 0.9s;
 }
 
-/* pour les autres éléments de la page */
 .light-theme .bg-dark {
-  background-color: #b9b9b9; !important;
+  background-color: #4d4d4d!important;
   color: #000000 !important;
-  transition: 0.9s;
-
+  transition: background-color 0.9s, color 0.9s;
 }
-.light-theme .bg-success{
+
+.light-theme .bg-success {
   background-color: #181818 !important;
   color: #ffffff;
-  transition: 0.9s;
-
+  transition: background-color 0.9s, color 0.9s;
 }
-
