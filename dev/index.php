@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('access/log_util.php');
+require_once('./access/log_util.php');
 
 // Assurez-vous que l'utilisateur est connecté et que $user_id est défini
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
@@ -200,5 +200,3 @@ if ($user_id) {
     <script src="script.js"></script>
     </body>
 </html>
-
-// tets 

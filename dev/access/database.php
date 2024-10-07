@@ -2,8 +2,8 @@
 /* Informations de connexion */
 $host = "localhost";
 $dbname = "vitafit";
-$username = "root";
-$password = ""; // Assurez-vous que le mot de passe est correct
+$username = "phpmyadmin";
+$password = "Mot2p@sse"; // Assurez-vous que le mot de passe est correct
 
 /* Création d'une instance PDO */
 try {
