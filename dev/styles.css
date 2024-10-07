@@ -1,4 +1,4 @@
-:root {
+}:root {
   /* Variables Générales */
   --noir: #272727;
   --vert: #57dc54;
@@ -218,5 +218,7 @@ body.light-theme {
   background-color: #28a745 !important;
   color: #d3d3d3;
 }
+
+
 =======
 >>>>>>> 54192c39d93588d0e72e801bbb899972967c8acc

@@ -7,7 +7,7 @@
     <!-- Il s'agit du nom de l'onglet -->
     <title>Mon Blog - Utilisateurs</title>
     <!-- Ceci nous permet de faire le lien avec notre fichier css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/dev/style.css">
     <!-- Ceci nous permet d'ajouter un favicon -->
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 </head>

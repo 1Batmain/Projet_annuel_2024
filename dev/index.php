@@ -186,22 +186,12 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
 
 
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-    <script src="script.js"></script>
+    <script src="/dev/js/script.js"></script>
 
 
 
     <script>
    
-   // script pour changer le thème (temporaire)
-   document.getElementById("theme-toggle").addEventListener("click", function () {
-       document.body.classList.toggle("light-theme");
-   
-       if (document.body.classList.contains("light-theme")) {
-           this.textContent = "🌙";
-       } else {
-           this.textContent = "☀️"; 
-       }
-   });
    
    </script>
 
