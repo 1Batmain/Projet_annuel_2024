@@ -22,13 +22,15 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
 
 <body>
          <!-- Top Notification Bar -->
-    <div class="bg-success text-white text-center py-1 d-flex justify-content-between align-items-center">
-        <div class="ms-3">
-            <span>🔥 Offre spéciale : Les 4 premières semaines à 19€</span>
-        </div>
-        <div class="me-3">
-            <a href="./access/register.php" class="text-white text-decoration-none me-3">S'INSCRIRE</a>
-            <a href="#" class="text-white text-decoration-none">✕</a>
+         <div id="banniere" class="bg-success text-white text-center py-1 d-flex justify-content-center align-items-center">
+    <div class="ms-3">
+        <span>🔥 Offre spéciale : Les 4 premières semaines à 19€</span>
+    </div>
+        <div class="me-3 position-absolute end-0">
+        <button id="theme-toggle" class="btn btn-light me-3"  style=background-color:#198755;>🌙</button>
+        <a href="../dev/access/register.php" class="text-white text-decoration-none me-3">S'INSCRIRE</a>
+        <a href="#" class="text-white text-decoration-none">✕</a>
+
         </div>
     </div>
     <?php include 'components/navbar.php'; ?>
@@ -58,7 +60,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
                                     <h1 class= "" ><span> 7j/7 et 24h/24 !</span></h1>
                                 </div>
                                 <div class="col-12">
-                                    <p class="lead mt-3">Avec ta carte FitForm tu as accès à toutes nos salles en France, Espagne et dans les Dom-Tom !</p>
+                                    <p class="lead mt-3">Avec ta carte VITAFIT tu as accès à toutes nos salles en France !</p>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +86,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
 
     <div class="container actualites-section">
     <div class="text-center section-title">
-        <h2 class="font-weight-bold">ACTUALITÉS FITNESS PARK</h2>
+        <h2 class="font-weight-bold">ACTUALITÉS VITAFIT</h2>
         <p>DÉCOUVREZ NOS DERNIERS ARTICLES</p>
         <div class="underline mx-auto"></div>
     </div>
@@ -141,7 +143,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
     </div>
 
 <!-- Section 1 : Concept & App -->
-<div class="container my-5">
+<div class="container my-5" style="width: 40%;">
     <div class="row no-gutters">
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Concept Vivafit</h3>
@@ -182,10 +184,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
     </main>
     <?php include 'components/footer.php'; ?>
 
-
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-    <script src="script.js"></script>
+    <script src="/dev/js/script.js"></script>
     </body>
 </html>
-
-// tets 

@@ -11,6 +11,7 @@
                 <li class="nav-item"><a class="nav-link" href="/pages/concept.php">Concept</a></li>
                 <li class="nav-item"><a class="nav-link" href="/dev/pages/subs.php">Abonnements</a></li>
                 <li class="nav-item"><a class="nav-link" href="/pages/clubs.php">Les clubs</a></li>
+                <li class="nav-item"><a class="nav-link" href="/dev/pages/newsletter.php">newsletter</a></li>
                 <li class="nav-item"><a class="nav-link" href="/pages/forum.php">Forum</a></li>
                 <li class="nav-item"><a class="nav-link" href="/pages/boutique.php">Boutique</a></li>
             </ul>
@@ -36,6 +37,7 @@
         <a class="nav-link" href="/pages/concept.php">Concept</a></li>
         <a class="nav-link" href="/dev/pages/subs.php">Abonnements</a></li>
         <a class="nav-link" href="/pages/clubs.php">Les clubs</a></li>
+        <li class="nav-item"><a class="nav-link" href="/pages/newsletter.php">newsletter</a></li>
         <a class="nav-link" href="/pages/forum.php">Forum</a></li>
         <a class="nav-link" href="/pages/boutique.php">Boutique</a></li>
         

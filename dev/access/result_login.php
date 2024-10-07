@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vitafit - Connexion</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/dev/style.css">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 </head>
 <body>
