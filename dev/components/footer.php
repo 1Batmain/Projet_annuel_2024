@@ -48,6 +48,7 @@
                         <li><a href="#" class="text-white text-decoration-none">Cardio training</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Cours collectifs</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Musculation</a></li>
+                        <li><a href="../dev/access/quiz.php" class="text-white text-decoration-none">Quiz</a></li>
                     </ul>
                 </div>
             </div>

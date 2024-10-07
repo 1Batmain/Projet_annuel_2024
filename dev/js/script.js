@@ -22,5 +22,23 @@ function closeNav(){
   document.getElementById("masqueFond").style.width="0";
   document.getElementById("masqueFond").classList.remove("visible");
 
-}
+  
+  
+  
+  // quiz
+  function submitQuiz() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+    const correctAnswers = JSON.parse(document.getElementById('quizForm').dataset.correct);
+    let score = 0;
 
+    formData.forEach((value, key) => {
+        const questionIndex = key.split('_')[1];
+        if (value === correctAnswers[questionIndex]) {
+            score++;
+        }
+    });
+
+    document.getElementById('result').innerText = `Vous avez obtenu un score de ${score} / ${correctAnswers.length}`;
+    form.style.display = 'none';
+}

@@ -191,34 +191,36 @@ label .password-icon .feather-eye-off {
   white-space: nowrap;
   border-radius: var(--bs-border-radius);
 }
-<<<<<<< HEAD
 
 
 
 /* mode sombre */
-body {
+body{
   background-color: #383838;
   color: #ffffff;
 }
 
 /* mode clair */
-body.light-theme {
+body.light-theme{
   background-color: #ffffff;
   color: #000000;
-  background-color: #d3d3d3; /* Gris clair */
+  background-color: #eff3ee;
   color: #000000;
+  transition: 0.9s;
+
 }
 
 /* pour les autres éléments de la page */
 .light-theme .bg-dark {
-  background-color: #d3d3d3; !important;
+  background-color: #b9b9b9; !important;
   color: #000000 !important;
+  transition: 0.9s;
+
 }
-.light-theme .bg-success {
-  background-color: #28a745 !important;
-  color: #d3d3d3;
+.light-theme .bg-success{
+  background-color: #181818 !important;
+  color: #ffffff;
+  transition: 0.9s;
+
 }
 
-
-=======
->>>>>>> 54192c39d93588d0e72e801bbb899972967c8acc
