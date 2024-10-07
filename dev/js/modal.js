@@ -1,6 +1,8 @@
+let previousModal = null;
 
 function openModal(type) 
 {
+
     // Ferme toutes les modales ouvertes
     document.querySelectorAll('.modal').forEach(function(modalElement) {
         var modalInstance = bootstrap.Modal.getInstance(modalElement);
@@ -19,17 +21,22 @@ function openModal(type)
         modalElement = document.getElementById('modalConnexion');
         // Ajouter la classe active au bouton Connexion (pour le surligner)
         document.getElementById('btnConnexion').classList.add('active');
+	 // Stocke la modale actuellement active avant d'ouvrir le CAPTCHA
+        previousModal = modalElement; // Récupère la modale actuellement affichée (connexion ou inscription)
     } else if (type === 'inscription') {
         // Sélectionne la modale d'inscription
         modalElement = document.getElementById('modalInscription');
         // Ajoute la classe active au bouton Inscription
         document.getElementById('btnInscription').classList.add('active');
+	 // Stocke la modale actuellement active avant d'ouvrir le CAPTCHA
+        previousModal = modalElement; // Récupère la modale actuellement affichée (connexion ou inscription)
     } else if (type === 'captcha') {
-        // Sélectionne la modale d'inscription
+
+        // Sélectionne la modale captcha
         modalElement = document.getElementById('modalCaptcha');
-        // Ajoute la classe active au bouton Inscription
+        // Ajoute la classe active au bouton Captcha
         document.getElementById('btnCaptcha').classList.add('active');
-    }
+    } else return;
 
 
     // Ouvrir la modale sélectionnée
@@ -37,3 +44,12 @@ function openModal(type)
     modal.show();
 }
 
+function closeCaptcha()
+{
+	if (previousModal == document.getElementById('modalConnexion'))
+		openModal('connexion')
+	else if (previousModal == document.getElementById('modalInscription'))
+		openModal('inscription');
+	else 
+		openModal();
+}

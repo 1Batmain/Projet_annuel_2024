@@ -108,10 +108,11 @@ canva.addEventListener("click", function()
 		if (askImageElement.src.includes(zoneDetectee)|| ((zoneDetectee == 'brasGauche' || zoneDetectee == 'brasDroit') && askImageElement.src.includes('bras')))
 		{
 			alert('OUI');
-			afficherImageAleatoire();
+			closeCaptcha();
 		}
 		else
 			alert('NON');
+			afficherImageAleatoire();
 	}
 });
 
