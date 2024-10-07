@@ -26,7 +26,7 @@ $questionKeys = array_slice($questionKeys, 0, 8);
 <head>
     <meta charset="UTF-8">
     <title>Quiz Musculation</title>
-    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="/dev/styles/quiz.css">
 </head>
 <body>
     <div class="quiz-container">
