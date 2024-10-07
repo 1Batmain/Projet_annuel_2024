@@ -143,7 +143,11 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
     </div>
 
 <!-- Section 1 : Concept & App -->
+<<<<<<< HEAD
 <div class="container my-5" style="width: 40%;">
+=======
+<div class="container my-5" style="width: 60%;">
+>>>>>>> 02023662a6bdeee280ba2dbec752a2122548674b
     <div class="row no-gutters">
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Concept Vivafit</h3>
@@ -186,5 +190,20 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
 
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
     <script src="/dev/js/script.js"></script>
+<<<<<<< HEAD
     </body>
 </html>
+=======
+
+
+
+    <script>
+   
+   
+   </script>
+
+
+    </body>
+</html>
+
+>>>>>>> 02023662a6bdeee280ba2dbec752a2122548674b
