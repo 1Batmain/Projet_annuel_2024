@@ -39,19 +39,19 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
     <main>
         <!-- Premier Bloc Image avec le texte par dessus -->
         <div class='container-fluid'>
-            <div class=" container p-0 shadow my-5 position-relative">
+            <div class=" container p-0 my-5 position-relative">
                 <div class ='row'>
-                        <h1 class= " z-1 position-absolute ms-5 mt-4 col-4 " >Dépasse toi et atteins tes <span>objectifs !</span>
+                        <h1 class= "" >Dépasse toi et atteins tes <span>objectifs !</span>
                         <p class="lead ms-2 mt-3">Trouve ta salle la plus proche parmis plus de 280 clubs répartis sur toute la france !</p>
                         </h1>
 
                 </div>
-                <img src='images/salle.webp' class='img-fluid w-100 z-0 ' alt="imge d'une de nos salle">    
+                <img src='images/salle.webp' class='img-fluid shadow w-100 z-0 ' alt="imge d'une de nos salle">    
             </div>
         </div> 
         <!-- Deuxième Bloc Image à droite texte à gauche -->
         <div class='container-fluid'>
-            <div class=" container p-0 shadow my-5 ">
+            <div class=" container p-0 my-5 ">
                 <div class ='row g-0 '>
                     <div class="col-md-6 d-flex flex-column justify-content-center">
                         <div class ='row'>
@@ -65,7 +65,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
                             </div>
                         </div>
                     </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 shadow ">
                             <img src='images/salle.webp' class='img-fluid w-100 h-100 col ' alt="imge d'une de nos salle" style='object-fit: cover;'>    
                         </div>
                 </div>

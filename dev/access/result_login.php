@@ -31,10 +31,16 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST['email'];
-        $password = $_POST['mot_de_passe'];
+			$email 		= $_POST['email'];
+			$password 	= $_POST['mot_de_passe'];
+			$captcha	= $_POST['result_captcha'];
 
         // Vérification des champs
+		if ($captcha != "true")
+		{
+			echo "<p style='color:red;'>Completez le captcha pour poursuivre.</p>";
+			exit();
+		}
         if (empty($email) || empty($password)) {
             echo '<p style="color:red;">Veuillez remplir tous les champs.</p>';
         } else {
