@@ -24,8 +24,7 @@
                         <label for="password">Mot de passe</label>
                         <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe">
                     </div>
-				 	<button type="button" class="btn btn-primary my-2" id= "btnCaptcha" onclick = "openModal('captcha')">Verifier le captcha</button>
-					<input type = "hidden" name="result_captcha" class="result_captcha" value="false">
+					<?php require $_SERVER['DOCUMENT_ROOT'] . "/dev/captcha/button_captcha.php"; ?>
                     <div class='text-center mt-3'>
                         <button type="submit" class="btn btn-primary" >Se connecter</button>
                     </div>
@@ -96,8 +95,7 @@
                         <option value="user">User</option>
                     </select>
                     </div>
-					<button type="button" class="btn btn-primary my-2" onclick = "openModal('captcha')">Verifier le captcha</button>
-					<input type = "hidden" name="result_captcha" class="result_captcha" value="false">
+					<?php require $_SERVER['DOCUMENT_ROOT'] . "/dev/captcha/button_captcha.php"; ?>
                     <div class='text-center mt-3'>
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
                     </div>

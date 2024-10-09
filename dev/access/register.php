@@ -58,8 +58,7 @@
 			</label>
 					</div>
 					<br>
-				<button type="button" class="btn btn-primary my-2" onclick = "openModal('captcha')">Verifier le captcha</button>
-				<input type = "hidden" name="result_captcha" class="result_captcha" value="false">
+					<?php require $_SERVER['DOCUMENT_ROOT'] . "/dev/captcha/button_captcha.php"; ?>
 					<div class="form_input">
 						<label for="role">Rôle </label>
 						<select id="role" name="role">
