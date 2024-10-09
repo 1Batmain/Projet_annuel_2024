@@ -10,7 +10,7 @@
       <div class="modal-body">
         <!-- Conteneur du CAPTCHA -->
         <div class="captcha-container text-center">
-		<h1>Sélectionner la partie du corps entrainé sur cet image </h1>>
+		<h1>Sélectionner la partie du corps entrainé sur cet image </h1>
           <img src="" id="askimage" alt="captcha image" width="400" height="200" style="border:1px solid #ccc;">
           <br>
           <canvas id="captcha" width="400" height="400" style="border:1px solid #ccc;"></canvas>
