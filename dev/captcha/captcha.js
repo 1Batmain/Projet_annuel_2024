@@ -107,7 +107,9 @@ canva.addEventListener("click", function()
 	{
 		if (askImageElement.src.includes(zoneDetectee)|| ((zoneDetectee == 'brasGauche' || zoneDetectee == 'brasDroit') && askImageElement.src.includes('bras')))
 		{
-			alert('OUI');
+			document.querySelectorAll(".result_captcha").forEach(function(c){
+				c.value="true";
+			});
 			closeCaptcha();
 		}
 		else

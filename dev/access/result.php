@@ -16,13 +16,14 @@
             require_once('database.php');
 
             // Récupérer les valeurs du formulaire
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
-            $age = $_POST['age'];
-            $email = $_POST['email'];
-            $password = $_POST['mot_de_passe'];
-            $confirm_password = $_POST['confirmation_de_mot_de_passe'];
-            $role = $_POST['role'];
+            $nom 				= $_POST['nom'];
+            $prenom 			= $_POST['prenom'];
+            $age 				= $_POST['age'];
+            $email 				= $_POST['email'];
+            $password 			= $_POST['mot_de_passe'];
+            $confirm_password 	= $_POST['confirmation_de_mot_de_passe'];
+            $role 				= $_POST['role'];
+			$captcha			= $_POST['result_captcha'];
 
             // Vérification des mots de passe
             if ($password !== $confirm_password) {
@@ -35,6 +36,13 @@
                 echo "<p style='color:red;'>Vous devez avoir au moins 18 ans pour vous inscrire.</p>";
                 exit();
             }
+
+			// Vérification du captcha
+			if ($captcha != "true")
+			{
+                echo "<p style='color:red;'>Completez le captcha pour poursuivre.</p>";
+                exit();
+			}
 
             // Hachage du mot de passe pour la sécurité
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
