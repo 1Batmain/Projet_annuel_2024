@@ -38,8 +38,8 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
 					<h1 class= "" >Dépasse toi et atteins tes <span>objectifs !</span>
 					<p class="lead ms-2 mt-3">Trouve ta salle la plus proche parmis plus de 280 clubs répartis sur toute la france !</p>
 					</h1>
-                <img src='images/salle.webp' class='img-fluid shadow w-100 z-0 ' alt="imge d'une de nos salle">    
                 </div>
+                <img src='images/salle.webp' class='img-fluid shadow w-100 z-0 ' alt="imge d'une de nos salle">    
             </div>
         </div> 
         <!-- Deuxième Bloc Image à droite texte à gauche -->
