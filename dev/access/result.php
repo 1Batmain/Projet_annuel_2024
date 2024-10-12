@@ -10,7 +10,6 @@
 <body>
 <main>
     <?php
-<<<<<<< HEAD
     require "../PHPMailer/PHPMailerAutoload.php";
     session_start();
 			// Vérification du captcha
@@ -26,7 +25,7 @@
         $password = $_POST['mot_de_passe'];
         $confirm_password = $_POST['confirmation_de_mot_de_passe'];
         $role = $_POST['role'];
-
+        $captcha = $_POST['result_captcha'];
         // Vérification des mots de passe
         if ($password !== $confirm_password) {
             echo "<p style='color:red;'>Les mots de passe ne correspondent pas.</p>";
