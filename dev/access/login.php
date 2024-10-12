@@ -6,10 +6,12 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Cela définit l'encodage des caractères de notre page -->
     <meta charset="UTF-8">
     <title>Vitafit - Connexion</title>
     <link rel="stylesheet" href="/dev/bootstrap-5.3.3-dist/css/bootstrap.css">
     <link rel="stylesheet" href="/dev/styles.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 </head>
 <body>
 <?php include '../components/navbar.php'; ?>
@@ -19,7 +21,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
         <h1>Connexion utilisateur</h1>
 
         <!-- Formulaire de connexion -->
-        <form action="result_login.php" method="post">
+        <form action="/dev/access/result_login.php" method="post">
             <div class="form_input">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>

@@ -107,7 +107,15 @@ canva.addEventListener("click", function()
 	{
 		if (askImageElement.src.includes(zoneDetectee)|| ((zoneDetectee == 'brasGauche' || zoneDetectee == 'brasDroit') && askImageElement.src.includes('bras')))
 		{
-			alert('OUI');
+			document.querySelectorAll(".btnCaptcha").forEach(function(c){
+				c.innerHTML += '<i data-feather="check" class="mx-1 pb-1"></i>';
+				feather.replace();
+
+			});
+			document.querySelectorAll(".result_captcha").forEach(function(c){
+				c.innerHTML += '<i data-feather="check" class="mx-1 pb-1"></i>';
+				c.value="true";
+			});
 			closeCaptcha();
 		}
 		else

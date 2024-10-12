@@ -10,8 +10,10 @@
 <body>
 <main>
     <?php
+<<<<<<< HEAD
     require "../PHPMailer/PHPMailerAutoload.php";
     session_start();
+			// Vérification du captcha
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['valider'])) {
         require_once('database.php');
@@ -42,6 +44,11 @@
             echo "<p style='color:red;'>Veuillez mettre votre email.</p>";
             exit();
         }
+	if ($captcha != "true")
+	{
+		echo "<p style='color:red;'>Completez le captcha pour poursuivre.</p>";
+		exit();
+	}
 
         // Génération d'une clé aléatoire
         $cle = rand(1000000, 9000000);

@@ -35,7 +35,9 @@ function openModal(type)
         // Sélectionne la modale captcha
         modalElement = document.getElementById('modalCaptcha');
         // Ajoute la classe active au bouton Captcha
-        document.getElementById('btnCaptcha').classList.add('active');
+        document.querySelectorAll('btnCaptcha').forEach(function(c){
+		c.classList.add('active');
+		});
     } else return;
 
 

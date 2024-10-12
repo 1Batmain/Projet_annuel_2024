@@ -14,7 +14,7 @@
             </div>
             <div class="modal-body">
                 <!-- Formulaire de connexion -->
-                <form action="../dev/access/result_login.php" method="post">
+                <form action="/dev/access/result_login.php" method="post">
                     <!-- Vos champs de formulaire ici -->
                     <div class="form-group">
                     <label for="email">Email</label>
@@ -24,9 +24,9 @@
                         <label for="password">Mot de passe</label>
                         <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe">
                     </div>
-				 	<button type="button" class="btn btn-primary my-2" id= "btnCaptcha" onclick = "openModal('captcha')">Verifier le captcha</button>
+					<?php require $_SERVER['DOCUMENT_ROOT'] . "/dev/captcha/button_captcha.php"; ?>
                     <div class='text-center mt-3'>
-                        <button type="submit" name="valider" class="btn btn-primary" >Se connecter</button>
+                        <button type="submit" class="btn btn-primary" >Se connecter</button>
                     </div>
                 </form>
             </div>
@@ -45,7 +45,7 @@
             </div>
             <div class="modal-body">
                 <!-- Formulaire d'inscription -->
-                <form action="../dev/access/result.php" method="post">
+                <form action="/dev/access/result.php" method="post">
                     <!-- Vos champs de formulaire ici -->
                     <div class="form-group">
                     <label for="nom">Nom</label>
@@ -95,7 +95,7 @@
                         <option value="user">User</option>
                     </select>
                     </div>
-					<button type="button" class="btn btn-primary my-2" onclick = "openModal('captcha')">Verifier le captcha</button>
+					<?php require $_SERVER['DOCUMENT_ROOT'] . "/dev/captcha/button_captcha.php"; ?>
                     <div class='text-center mt-3'>
                     <button type="submit" name="valider" class="btn btn-primary">S'inscrire</button>
                     </div>
@@ -105,38 +105,13 @@
     </div>
 </div>
 
-<!-- Modal Captcha -->
-<div class="modal fade" id="modalCaptcha" tabindex="-100" role="dialog" aria-labelledby="captchaModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="captchaModalLabel">Vérification CAPTCHA</h5>
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Conteneur du CAPTCHA -->
-        <div class="captcha-container text-center">
-          <img src="" id="askimage" alt="captcha image" width="400" height="200" style="border:1px solid #ccc;">
-          <br>
-          <canvas id="captcha" width="400" height="400" style="border:1px solid #ccc;"></canvas>
-          <br>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeCaptcha()">Fermer</button>
-      </div>
-    </div>
-  </div>
-</div>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . "/dev/captcha/captcha.php"; ?>
 
 <!-- Inclure Bootstrap JS, jQuery et Popper.js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Inclure le script du CAPTCHA -->
-<script src='/dev/captcha/captcha.js'></script>
+<script src="/dev/js/modal.js"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="/dev/js/eye.js"></script>
-<script src="/dev/js/modal.js"></script>

@@ -30,6 +30,7 @@
         ]);
     }
 
+<<<<<<< HEAD
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['valider'])) {
           $email = $_POST['email'];
         $password = $_POST['mot_de_passe'];
@@ -42,6 +43,11 @@
                 $userInfo = $recupUser->fetch();
                 if($userInfo['confirme'] == 1){
                     header('Location: ../access/verif.php?id='.$userInfo['id'].'&cle='.$userInfo['cle']);
+		if ($captcha != "true")
+		{
+			echo "<p style='color:red;'>Completez le captcha pour poursuivre.</p>";
+			exit();
+		}
                 }else{
                     echo "Vous n'etes pas confirmé au niveau du site";
                 }
