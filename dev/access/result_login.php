@@ -30,9 +30,28 @@
         ]);
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $_POST['email'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['valider'])) {
+          $email = $_POST['email'];
         $password = $_POST['mot_de_passe'];
+        
+        if (empty($email) || empty($password)) {
+
+        $recupUser = $pdo->prepare('SELECT*FROM users WHERE  email = ?');
+        $recupUser->execute(array($_POST['email']));
+        if($recupUser->rowCount() > 0){
+                $userInfo = $recupUser->fetch();
+                if($userInfo['confirme'] == 1){
+                    header('Location: ../access/verif.php?id='.$userInfo['id'].'&cle='.$userInfo['cle']);
+                }else{
+                    echo "Vous n'etes pas confirmé au niveau du site";
+                }
+        }else{
+            echo "L'utilisateur n'existe pas";
+        }
+
+       }else{
+                echo " Veuillez mettre votre e-mail";
+       }
 
         // Vérification des champs
         if (empty($email) || empty($password)) {

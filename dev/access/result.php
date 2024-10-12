@@ -11,7 +11,7 @@
 <main>
     <?php
     require "../PHPMailer/PHPMailerAutoload.php";
-    session_start();  // Démarre la session
+    session_start();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['valider'])) {
         require_once('database.php');

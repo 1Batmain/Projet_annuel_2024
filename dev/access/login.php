@@ -1,26 +1,25 @@
 <?php 
 session_start(); 
-require_once('access/log_util.php'); 
+require_once('log_util.php'); 
 ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SESSION['user_id']) ? 'Visite de la page' : 'Visite de la page sans connexion', basename($_SERVER['PHP_SELF'])); 
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Cela définit l'encodage des caractères de notre page -->
     <meta charset="UTF-8">
-    <!-- Il s'agit du nom de l'onglet -->
-    <title>Mon Blog - Inscription</title>
-    <!-- Ceci nous permet de faire le lien avec notre fichier css -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Ceci nous permet d'ajouter un favicon -->
-    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <title>Vitafit - Connexion</title>
+    <link rel="stylesheet" href="/dev/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/dev/styles.css">
 </head>
+<body>
+<?php include '../components/navbar.php'; ?>
+<?php include '../components/fenetre_modale_inscription_connexion.php'; ?>
 <body>
 <main>
         <h1>Connexion utilisateur</h1>
 
         <!-- Formulaire de connexion -->
-        <form action="/dev/access/result_login.php" method="post">
+        <form action="result_login.php" method="post">
             <div class="form_input">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
@@ -33,9 +32,9 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
             </div>
             <br>
 
-            <button type="submit">Valider</button>
+            <button type="submit" name="valider">Valider</button>
         </form>
     </main>
-    <?php require_once ('components/footer.php') ?>
+    <?php require_once ('../components/footer.php') ?>
 </body>
 </html>

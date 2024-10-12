@@ -26,7 +26,7 @@
                     </div>
 				 	<button type="button" class="btn btn-primary my-2" id= "btnCaptcha" onclick = "openModal('captcha')">Verifier le captcha</button>
                     <div class='text-center mt-3'>
-                        <button type="submit" class="btn btn-primary" >Se connecter</button>
+                        <button type="submit" name="valider" class="btn btn-primary" >Se connecter</button>
                     </div>
                 </form>
             </div>
@@ -97,7 +97,7 @@
                     </div>
 					<button type="button" class="btn btn-primary my-2" onclick = "openModal('captcha')">Verifier le captcha</button>
                     <div class='text-center mt-3'>
-                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    <button type="submit" name="valider" class="btn btn-primary">S'inscrire</button>
                     </div>
                 </form>
             </div>
