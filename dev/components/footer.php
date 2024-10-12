@@ -20,7 +20,7 @@
                     <h5 class="text-uppercase">Aide & Informations</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Abonnements</a></li>
+                        <li><a href="/dev/pages/subs.php" class="text-white text-decoration-none">Abonnements</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Envie d'essayer nos salles ?</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
                     </ul>
@@ -48,6 +48,7 @@
                         <li><a href="#" class="text-white text-decoration-none">Cardio training</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Cours collectifs</a></li>
                         <li><a href="#" class="text-white text-decoration-none">Musculation</a></li>
+                        <li><a href="/dev/pages/quiz.php" class="text-white text-decoration-none">Quiz</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,9 +64,9 @@
                         <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Données Personnelles</a></li>
                         <li class="list-inline-item"><a href="#" class="text-white text-decoration-none">Paramétrer les cookies</a></li>
                             <!-- Ici, nous préfixons avec "mailto :" afin que le système comprenne automatiquement qu'un mail doit être écrit -->
-                        <li class="list-inline-item"><a href="mailto:example@email.example" class="text-white text-decoration-none">Nous écrire</a></li> 
+                        <li class="list-inline-item"><a href="mailto:iliashamel041@gmail.com" class="text-white text-decoration-none">Nous écrire</a></li> 
                             <!-- Ici, nous préfixons avec "tel :" afin que le système comprenne automatiquement qu'un appel doit être passé -->
-                        <li class="list-inline-item"><a href="tel:+33600000000"class="text-white text-decoration-none">Nous Appeler</a></li> 
+                        <li class="list-inline-item"><a href="tel:+33768377522"class="text-white text-decoration-none">Nous Appeler</a></li> 
 
                     </ul>
                 </div>

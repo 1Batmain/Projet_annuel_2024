@@ -1,34 +1,16 @@
-<!-- Ici, nous définissons l'espace réservé à la navigation -->
-<!-- https://developer.mozilla.org/fr/docs/Web/HTML/Element/nav -->
+<?php
+session_start();
+?>
 <nav>
-    <!-- Ici, nous avons 3 ancres qui permettent la navigation entre les pages -->
-    <!-- https://developer.mozilla.org/fr/docs/Web/HTML/Element/a -->
-    <!-- Navigation vers la page Accueil-->
-    <a href="../dev/index.php">Accueil</a>
-
-    <?php
-
-    /* Ici, on utilise "session_start()" afin d'initialiser une session */
-    /* Cette instruction est indispensable pour pouvoir lire ou écrire dans la variable $_SESSION */
-    /* Comme la nav est présente sur toutes les pages, je n'ai pas besoin d'utiliser "session_start()" ailleurs */
-    /* https://www.php.net/manual/fr/function.session-start.php */
-    session_start();
-
-
-    /* Ici, je vérifie l'état de l'utilisateur et affiche une navigation différente en fonction de son état */
-    if (isset($_SESSION["email"]) && !empty($_SESSION["email"])) {
-        /* Navigation vers la page Utilisateurs, affichée uniquement si l'utilisateur est connecté */
-        echo "<a href=\"../dev/access/users.php\">Utilisateurs</a>";
-        /* Navigation vers la page Logout, affichée uniquement si l'utilisateur est connecté */
-        echo "<a href=\"../dev/access/logout.php\">Déconnexion</a>";
-    } else {
-        /* Navigation vers la page Inscription */
-        echo "<a href=\"../dev/access/register.php\">Inscription</a>";
-        /* Navigation vers la page Connexion, affichée uniquement si l'utilisateur n'est pas connecté */
-        echo "<a href=\"../dev/access/login.php\">Connexion</a>";
-    }
-
-    ?>
-
-
+    <ul>
+        <li><a href="../index.php">Accueil</a></li>
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+            <li><a href="../pages/compte.php">Mon Compte</a></li>
+            <li><a href="../pages/panier.php">Mon Panier</a></li>
+            <li><a href="../access/logout.php">Déconnexion</a></li>
+        <?php else: ?>
+            <li><a href="../access/login.php">Connexion</a></li>
+            <li><a href="../access/register.php">Inscription</a></li>
+        <?php endif; ?>
+    </ul>
 </nav>

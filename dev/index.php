@@ -1,3 +1,8 @@
+<?php 
+session_start(); 
+require_once('access/log_util.php'); 
+ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SESSION['user_id']) ? 'Visite de la page' : 'Visite de la page sans connexion', basename($_SERVER['PHP_SELF'])); 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,19 +16,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 -->
     <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../dev/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 
 </head>
 
 <body>
          <!-- Top Notification Bar -->
-    <div class="bg-success text-white text-center py-1 d-flex justify-content-between align-items-center">
-        <div class="ms-3">
-            <span>🔥 Offre spéciale : Les 4 premières semaines à 19€</span>
-        </div>
-        <div class="me-3">
-            <a href="../dev/access/register.php" class="text-white text-decoration-none me-3">S'INSCRIRE</a>
-            <a href="#" class="text-white text-decoration-none">✕</a>
+         <div id="banniere" class="bg-success text-white text-center py-1 d-flex justify-content-center align-items-center">
+    <div class="ms-3">
+        <span>🔥 Offre spéciale : Les 4 premières semaines à 19€</span>
+    </div>
+        <div class="me-3 position-absolute end-0">
+        <button id="theme-toggle" class="btn btn-light me-3"  style=background-color:#198755;>🌙</button>
+        <a href="../dev/access/register.php" class="text-white text-decoration-none me-3">S'INSCRIRE</a>
+        <a href="#" class="text-white text-decoration-none">✕</a>
+
         </div>
     </div>
     <?php include 'components/navbar.php'; ?>
@@ -53,7 +60,7 @@
                                     <h1 class= "" ><span> 7j/7 et 24h/24 !</span></h1>
                                 </div>
                                 <div class="col-12">
-                                    <p class="lead mt-3">Avec ta carte FitForm tu as accès à toutes nos salles en France, Espagne et dans les Dom-Tom !</p>
+                                    <p class="lead mt-3">Avec ta carte VITAFIT tu as accès à toutes nos salles en France !</p>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +86,7 @@
 
     <div class="container actualites-section">
     <div class="text-center section-title">
-        <h2 class="font-weight-bold">ACTUALITÉS FITNESS PARK</h2>
+        <h2 class="font-weight-bold">ACTUALITÉS VITAFIT</h2>
         <p>DÉCOUVREZ NOS DERNIERS ARTICLES</p>
         <div class="underline mx-auto"></div>
     </div>
@@ -88,7 +95,7 @@
         <!-- Première carte -->
         <div class="col-md-4">
             <div class="card">
-                <img src="../dev/images/tout-savoir-sur-le-cheat-meal.jpg" class="card-img-top" alt="Article 1">
+                <img src="./images/tout-savoir-sur-le-cheat-meal.jpg" class="card-img-top" alt="Article 1">
                 <div class="card-body">
                     <h5 class="card-title">LE RECALIBRAGE MÉTABOLIQUE POUR RELANCER UNE PERTE DE POIDS ?</h5>
                     <p class="card-text">Par Naomi Garciau</p>
@@ -100,7 +107,7 @@
         <!-- Deuxième carte -->
         <div class="col-md-4">
             <div class="card">
-                <img src="../dev/images/imageactu2.jpg" class="card-img-top" alt="Article 2">
+                <img src="./images/imageactu2.jpg" class="card-img-top" alt="Article 2">
                 <div class="card-body">
                     <h5 class="card-title">OBTENIR UN 6 PACK VISIBLE : LA MÉTHODE APPROUVÉE PAR NASSIM SAHILI</h5>
                     <p class="card-text">Par Nassim Sahili</p>
@@ -112,7 +119,7 @@
         <!-- Troisième carte -->
         <div class="col-md-4">
             <div class="card">
-                <img src="../dev/images/Vignette_Salade-couscous-1-550x550.jpg" class="card-img-top" alt="Article 3">
+                <img src="./images/Vignette_Salade-couscous-1-550x550.jpg" class="card-img-top" alt="Article 3">
                 <div class="card-body">
                     <h5 class="card-title">SALADE DE SEMOULE AUX LÉGUMES GRILLÉS</h5>
                     <p class="card-text">Par Naomi Garciau</p>
@@ -136,23 +143,23 @@
     </div>
 
 <!-- Section 1 : Concept & App -->
-<div class="container my-5">
+<div class="container my-5" style="width: 40%;">
     <div class="row no-gutters">
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Concept Vivafit</h3>
-            <img src="../dev/images/Sreen-lame-1.png" alt="Concept et App" class="img-fluid img-bordered">
+            <img src="./images/Sreen-lame-1.png" alt="Concept et App" class="img-fluid img-bordered">
         </div>
         <div class="col-md-6 position-relative">
             <h3 class="image-title">APP Vivafit</h3>
-            <img src="../dev/images/tout-savoir-sur-le-cheat-meal.jpg" alt="Homepark" class="img-fluid img-bordered">
+            <img src="./images/tout-savoir-sur-le-cheat-meal.jpg" alt="Homepark" class="img-fluid img-bordered">
         </div>
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Vivafit ACTU'</h3>
-            <img src="../dev/images/Copie-de-041224_FitnessPark_Saint_Brice_Sous_Foret-06-2.jpg" alt="Gym" class="img-fluid img-bordered">
+            <img src="./images/Copie-de-041224_FitnessPark_Saint_Brice_Sous_Foret-06-2.jpg" alt="Gym" class="img-fluid img-bordered">
         </div>
         <div class="col-md-6 position-relative">
             <h3 class="image-title">Homepark</h3>
-            <img src="../dev/images/HP_Home_480x590_2.jpg" alt="Homepark" class="img-fluid img-bordered">
+            <img src="./images/HP_Home_480x590_2.jpg" alt="Homepark" class="img-fluid img-bordered">
         </div>
     </div>
 </div>
@@ -177,8 +184,7 @@
     </main>
     <?php include 'components/footer.php'; ?>
 
-
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
-    <script src="script.js"></script>
+    <script src="/dev/js/script.js"></script>
     </body>
 </html>
