@@ -37,7 +37,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
 
         <div class="form_input">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" name="email" required>
         </div>
         <br>
 
@@ -67,7 +67,7 @@ ajouterLog(isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null, isset($_SE
             </select>
         </div>
         <br>
-        <button type="submit">Valider</button>
+        <button type="submit" name="valider">Valider</button>
         </form>
     </main>
 <script src="https://unpkg.com/feather-icons"></script>

@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="/dev/style.css">
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 </head>
+
 <body>
 <main>
-<?php
-    require "../PHPMailer/PHPMailerAutoload.php"; // Chargement de PHPMailer
-    session_start();
-    require_once('database.php');
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    <?php
+    require "../PHPMailer/PHPMailerAutoload.php";
+    session_start();  // Démarre la session
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['valider'])) {
+        require_once('database.php');
+
         // Récupérer les valeurs du formulaire
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
@@ -34,6 +37,14 @@
             exit();
         }
 
+        // Vérification si un email a été saisi
+        if (empty($email)) {
+            echo "<p style='color:red;'>Veuillez mettre votre email.</p>";
+            exit();
+        }
+
+        // Génération d'une clé aléatoire
+        $cle = rand(1000000, 9000000);
         // Hachage du mot de passe pour la sécurité
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -49,7 +60,7 @@
         }
 
         // Préparation et exécution de la requête SQL
-        $sql = "INSERT INTO users (nom, prenom, age, email, mdp, role) VALUES (:nom, :prenom, :age, :email, :mdp, :role)";
+        $sql = "INSERT INTO users (nom, prenom, age, email, mdp, cle, confirme, role) VALUES (:nom, :prenom, :age, :email, :mdp, :cle, 0, :role)";
         $stmt = $pdo->prepare($sql);
         
         try {
@@ -59,6 +70,7 @@
                 ':age' => $age,
                 ':email' => $email,
                 ':mdp' => $hashed_password,
+                ':cle' => $cle,
                 ':role' => $role
             ]);
 
@@ -66,111 +78,52 @@
             $user_id = $pdo->lastInsertId();
 
             // Initialiser la session de l'utilisateur
-            $_SESSION['logged_in'] = true;
+            $_SESSION['logged_in'] = false;
             $_SESSION['email'] = $email;
-            $_SESSION['user_id'] = $user_id;  // Assurez-vous d'utiliser le bon champ d'identifiant
+            $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
 
-            // Rediriger vers la page verif
+            // Envoi de l'email de confirmation avec PHPMailer
+            function smtpmailer($to, $from, $from_name, $subject, $body) {
+                $mail = new PHPMailer();
+                $mail->IsSMTP();
+                $mail->SMTPAuth = true; 
+                $mail->SMTPSecure = 'ssl'; 
+                $mail->Host = 'smtp.gmail.com';
+                $mail->Port = 465;  
+                $mail->Username = 'vitafittest92@gmail.com';
+                $mail->Password = 'fgjjtcgkqymljwda';
+                
+                $mail->IsHTML(true);
+                $mail->From = $from;
+                $mail->FromName = $from_name;
+                $mail->AddReplyTo($from, $from_name);
+                $mail->Subject = $subject;
+                $mail->Body = $body;
+                $mail->AddAddress($to);
+
+                if (!$mail->Send()) {
+                    return "Erreur lors de l'envoi de l'email : " . $mail->ErrorInfo;
+                } else {
+                    return "Email envoyé avec succès.";
+                }
+            }
+
+            $to = $email;
+            $from = 'vitafittest92@gmail.com';
+            $name = 'SupportVitafit';
+            $subj = 'Email de confirmation de compte';
+            $msg = 'Veuillez confirmer votre compte en cliquant sur le lien suivant : <a href="http://vivafit/dev/access/verif.php?id=' . $user_id . '&cle=' . $cle . '">Confirmer mon compte</a>';
+
+            $error = smtpmailer($to, $from, $name, $subj, $msg);
+            echo "<p>" . htmlspecialchars($error) . "</p>";
+
+            // Rediriger vers la page de vérification
             header("Location: ../access/verif.php");
             exit();
             
         } catch (PDOException $e) {
             echo "<p style='color:red;'>Erreur lors de l'inscription : " . htmlspecialchars($e->getMessage()) . "</p>";
-        }
- }
-    if(isset($_POST['valider'])) {
-        // Vérification si un email a été saisi
-        if(!empty($_POST['email'])) {
-            // Génération d'une clé aléatoire
-            $cle = rand(1000000, 9000000);
-            // Récupération de l'email saisi
-            $email = $_POST['email'];
-
-            // Préparation de la requête d'insertion en base de données
-            $insererUser = $bdd->prepare('INSERT INTO users(email, cle, confirme) VALUES(?, ?, ?)');
-            // Exécution de la requête avec les valeurs
-            $insererUser->execute(array($email, $cle, 0));
-
-            // Préparation de la requête pour récupérer les informations de l'utilisateur
-            $recupUser = $bdd->prepare('SELECT * FROM users WHERE email = ?');
-            $recupUser->execute(array($email));
-
-            // Si l'utilisateur a été trouvé
-            if($recupUser->rowCount() > 0) {
-                $userInfos = $recupUser->fetch();
-                $_SESSION['id'] = $userInfos['id'];
-
-                if (isset($_POST['valider'])) {
-                    if (!empty($_POST['email'])) {  // Correction : vérification si l'email est fourni
-                        $cle = rand(1000000, 9000000);
-                        $email = $_POST['email'];
-                        
-                        // Insertion dans la base de données
-                        $insererUser = $bdd->prepare('INSERT INTO users(email, cle, confirme) VALUES(?, ?, ?)');
-                        $insererUser->execute(array($email, $cle, 0));
-                
-                        if ($insererUser) {
-                            echo "Utilisateur inséré avec succès.";
-                            
-                            // Récupération des informations de l'utilisateur
-                            $recupUser = $bdd->prepare('SELECT * FROM users WHERE email = ?');
-                            $recupUser->execute(array($email));
-                
-                            if ($recupUser->rowCount() > 0) {
-                                $userInfos = $recupUser->fetch();
-                                $_SESSION['id'] = $userInfos['id'];
-                                
-                            // Envoi de l'email de confirmation avec PHPMailer
-                            function smtpmailer($to, $from, $from_name, $subject, $body) {
-                                $mail = new PHPMailer();
-                                $mail->IsSMTP();
-                                $mail->SMTPAuth = true; 
-                                $mail->SMTPSecure = 'ssl'; 
-                                $mail->SMTPDebug = 2;  // Affiche le débogage SMTP
-                                $mail->Host = 'smtp.gmail.com';
-                                $mail->Port = '465';  
-                                $mail->Username = 'vitafittest92@gmail.com';
-                                $mail->Password = 'fgjjtcgkqymljwda';
-                                
-                                $mail->IsHTML(true);
-                                $mail->From = $from;
-                                $mail->FromName = $from_name;
-                                $mail->AddReplyTo($from, $from_name);
-                                $mail->Subject = $subject;
-                                $mail->Body = $body;
-                                $mail->AddAddress($to);
-
-                                if(!$mail->Send()) {
-                                    return "Erreur lors de l'envoi de l'email : " . $mail->ErrorInfo;
-                                } else {
-                                    return "Email envoyé avec succès.";
-                                }
-                            }
-                
-                                $to = $email;
-                                $from = 'vitafittest92@gmail.com';
-                                $name = 'SupportVitafit';
-                                $subj = 'Email de confirmation de compte';
-                                $msg = 'http://vivafit/dev/access/verif.php?id='.$_SESSION['id'].'&cle='.$cle;
-                
-                                $error = smtpmailer($to, $from, $name, $subj, $msg);
-                                echo $error;
-                                
-                            } else {
-                                echo "Aucun utilisateur trouvé.";
-                            }
-                        } else {
-                            echo "Erreur lors de l'insertion de l'utilisateur.";
-                        }
-                    } else {
-                        echo "Veuillez mettre votre email";
-                    }
-                }
-
-            }
-        } else {
-            echo "Veuillez mettre votre email";
         }
     }
     ?>
